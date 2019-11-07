@@ -50,6 +50,7 @@ class Main extends PluginBase implements Listener{
 				}
 				return true;
 				}
+				return true;
 			break;
 			case "mockme":
 				if(empty($args)) {

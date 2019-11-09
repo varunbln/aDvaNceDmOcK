@@ -119,6 +119,7 @@ class Main extends PluginBase implements Listener{
 
 	public function getLastMessage($playername) {
 		$stmt = $this->db->prepare("SELECT message FROM messages WHERE player = '$playername';");
+		$stmt->bindValue(":player", $playername);
 		$result = $stmt->execute();
 		$resultArr = $result->fetchArray(SQLITE3_ASSOC);
 		if(empty($resultArr)) {
